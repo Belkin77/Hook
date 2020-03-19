@@ -9,8 +9,6 @@ function send_notification_expiring_licence() {
   $site_url = $_SERVER['HTTP_HOST'];
   if ($site_url == "xxxx.com") {
 
-    // Pour chaque licence, insérer sa date d'expiration au format américain (Y-m-d)
-
     $licence = array (
       "Plugin 1" => "2020-06-16",
       "Plugin 2" => "2020-12-10",
