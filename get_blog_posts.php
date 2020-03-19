@@ -1,8 +1,10 @@
 <?php
 
+// Obtenir les articles d'un site précis et les afficher sur un autre site du multisite via un shortcode
+
 add_shortcode('blog_posts', 'get_blog_posts');
 function get_blog_posts() {
-
+	
 	switch_to_blog( 10 );
 
 	$output = "<div class='blog_extract_post'><div class='owl-carousel owl-theme'>";
