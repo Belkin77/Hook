@@ -17,8 +17,7 @@ function get_blog_posts() {
 
 		$categories = get_the_category();
 
- 		$term_meta = get_term_meta($categories[0]->term_id);
-
+		$term_meta = get_term_meta($categories[0]->term_id);
 
 		// On récupère l'image associée à la catégorie
 
@@ -26,20 +25,17 @@ function get_blog_posts() {
 
 		$output .= "<div class='first_post' class='item'>";
 
-	    $output .= the_title('<div class="title_bloc"><span id="title_first_post"><a href='. get_permalink() .'>','</a></span></div>');
+		$output .= the_title('<div class="title_bloc"><span id="title_first_post"><a href='. get_permalink() .'>','</a></span></div>');
 
-	    $output .= ob_get_clean(); // Permettre de rediger le tampon de sortie de façon relative
+		$output .= ob_get_clean(); // Permettre de rediger le tampon de sortie de façon relative
 
-	    $output .= "<div class='categories-first-post'><a href='".get_category_link(get_cat_ID($categories[0]->name))."'>
-		<img class='category_image_post' src=".$url_image_category_current.">".esc_html( $categories[0]->name )."</a></div>";
+		$output .= "<div class='categories-first-post'><a href='".get_category_link(get_cat_ID($categories[0]->name))."'><img class='category_image_post' src=".$url_image_category_current.">".esc_html( $categories[0]->name )."</a></div>";
 
-		$output .= "<div class='thumbnail_first_image'>
-		<a href='".get_permalink() ."'>". get_the_post_thumbnail( '', 'full', array( 'class' => 'aligncenter' ) ). "
-		</a></div>";
+		$output .= "<div class='thumbnail_first_image'><a href='".get_permalink() ."'>". get_the_post_thumbnail( '', 'full', array( 'class' => 'aligncenter' ) ). "</a></div>";
 
 		$output .= "<div class='excerpt_first_post'>". wp_trim_words( get_the_excerpt(), 15, '...' ) ."</div>";
 
-	    $output .= "<img class='border_read_more' src='wp-content/themes/elephant-maison-blog/img/border_read_more.png'/>";
+		$output .= "<img class='border_read_more' src='wp-content/themes/elephant-maison-blog/img/border_read_more.png'/>";
 
 		$output .= "<div class='excerpt_more'><a class='chevron_droite' href='".get_permalink() ."'>Lire la suite</a></div>";
 
